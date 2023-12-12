@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earl's Regency</title>
+    <link rel="stylesheet" href="./Hotel_Booking.css" type="text/css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="./site.webmanifest">
+    <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <header id="intro" class="header">
+        <!--Logo-->
+        <a href="./Home.html"><img src="./Logo2.png" alt="Logo of the blog" class="Logo"></a>
+        <!--Site Name-->
+        <nav>
+            <ul class="navigation">
+            <li><a class="nav-home" href="./Home.html">Home page</a></li>
+            <li><a class="nav-Hotel-Branch" href="./Hotel_Branches.html">Hotel Branches</a></li>
+            <li><a class="nav-Adventures" href="./Adventures.html">Adventures</a></li>
+            <li><a class="nav-Restaurant" href="./Restaurants.html">Restaurants</a></li>
+            <li><a class="nav-Hotel-Booking-and-adventure-booking" href="./Hotel_Booking_and_adventure_booking.html">Booking hotel and adventures</a></li>
+            </ul>
+        </nav>  
+    </header>
+    <img src="./earls_regency_hotel_2.jpg" alt="Hotel View" class="Earls-Regency-Hotel-2">
+    <!--Bookings Section-->
+    <section class="container">
+        <!-- Room Booking form -->
+        <fieldset class="formdesign">
+            <h1 class="HotelBooking">Hotel Booking</h1>
+        <form action="index.php" method="get" id="room_booking form">
+        <!-- inputs -->
+                <p>
+                    <label>Name</label>
+                    <input type="text" name="name" id="name"  placeholder=" Enter your full name here" required>
+                </p>
+                <p>
+                    <label>Email</label>
+                    <input type="email" name="email" id="email" placeholder=" Enter your email here" required>
+                </p>
+                <p>
+                    <label>Check In Date</label>
+                    <input type="date" name="date" id="CheckIn" required>
+                </p>
+                <p>
+                    <label>Check Out Date</label>
+                    <input type="date" name="date" id="CheckOut" required>
+                </p>
+                <!-- Nationality Selection -->
+                <p>
+                    <label>Nationality</label>
+                    <select  id="nationality" required>
+                        <option>Select one of the below</option>
+                        <option  value="local">Local</option>
+                        <option  value="foreign">Foreign</option>
+                    </select>
+                </p>
+                <p>
+                    <label>Number of Single Room(s)</label>
+                    <input type="number" name="single" id="single" class="input-number" min="0" value="0" max="20">
+                </p>
+                <p>
+                    <label>Number of Double Room(s)</label>
+                    <input type="number" name="double" id="double"  class="input-number" min="0" value="0" max="20"">
+                </p>
+                <p>
+                    <label>Number of Triple Room(s)</label>
+                    <input type="number" name="triple" id="triple"  class="input-number" min="0" value="0" max="20">
+                </p>
+                <p>
+                    <label>Total Number of room(s)</label>
+                    <input type="text" name="numofrooms" id="numofrooms" readonly>
+                </p>
+                <p>
+                    <label >Number of Adult(s)</label>
+                    <input type="number" name="numofadults" id="numofadults" min="1" value="1" max="20" required>
+                </p>
+                <p>
+                    <label>Number of Kid(s) above 5yrs (Meals)</label>
+                    <input type="number" name="numofkids" id="numofkids" min="0" value="0">
+                </p>
+                <p>
+                    <label>Number of Extra Bed(s)</label>
+                    <input type="number" name="beds" id="beds" min="0" value="0" max="20">
+                </p>
+                <p>
+                    <label>Promo code</label>
+                    <input type="number" name="promocode" id="promocode" placeholder="0123456789">
+                </p>
+                <!--Extra Requirements-->
+                <p>
+                    <label>Extra Requirement(s)</label>
+                    <p id="checkbox">
+                        <label for="WiFi">WiFi</label>
+                        <input type="checkbox" id="WiFi" name="extrareq" value="WiFi">
+                    </p>
+                    <p id="checkbox">
+                        <label for="WiFi">Pool View</label>
+                        <input type="checkbox" id="PoolView" name="extrareq" value="PoolView">
+                    </p>
+                    <p id="checkbox">
+                        <label for="WiFi">Garden View</label>
+                        <input type="checkbox" id="GardenView" name="extrareq" value="GardenView">
+                    </p>
+                </p>
+            <!--current booking display-->
+            <p id="output-field" >
+                <p class="currentBookingHeader" id="currentBookingHeader"><h1>Current Hotel Booking</h1></p>
+                    <fieldset id="fieldset-1" >
+                        <p id="output-1"></p>
+                    </fieldset>
+            </p>
+            <!--Book Now button-->
+                <p id="submit">
+                    <input type="button" value="Book Now" id="booknow" class="booknowbutton">
+                </p>
+            </form>
+        </fieldset>
+    </section>
+    <section class="container2">
+        <fieldset>
+        <p class="AdventureBooking">
+            <h1>Adventure Booking: Diving </h1>
+        </p>
+        <!-- Adventure booking form -->
+        <p>
+            <form action="index.php" method="get" id="form_ad">
+                <p>
+                    <label>Name</label>
+                    <input type="text" name="name" id="nameadv" placeholder=" Enter your full name here" required>
+                </p>
+                <p>
+                    <label>Email</label>
+                    <input type="email" name="email" id="emailadv" placeholder=" Enter your email address here" required>
+                </p>
+                <p>
+                    <label>Date</label>
+                    <input type="date" name="date" id="date" required>
+                </p>
+                <p>
+                    <label>Mobile number</label>
+                    <input type="number" name="number" id="number" placeholder="+94012345678" required>
+                </p>
+                <p>
+                    <label>Nationality</label>
+                    <select name="nationalityAd" id="nationalityAd" required >
+                        <option value="">Select one of the below</option>
+                        <option value="Local">Local</option>
+                        <option value="Foreign">Foreign</option>
+                    </select>
+                </p>
+                <p>
+                <label for="num">Number of Adult(s)</label>
+                <input type="number" name="num" id="numofadultsadventure" min="1" value="0" required>
+                </p>
+                <p>
+                    <label for="num">Number of Kid(s) </label>
+                    <input type="number" name="num" id="numofkidsadventure" value="0">
+                </p>
+                <p>
+                    <label>Number of hour(s)</label>
+                    <input type="number" name="time" id="time" placeholder=" Hours" min="1" value="1" required>
+                </p>
+                <p>
+                    <label>Guide Requirement(s)</label>
+                    <p>
+                        <label for="foradults">For Adult(s)</label>
+                        <input type="checkbox" id="foradults" name="foradults">
+                    </p>
+                    <p>
+                        <label for="forkids">For Kid(s)</label>
+                        <input type="checkbox" id="forkids" name="forkids" >
+                    </p>
+                </p>
+                <p id="output_ad">
+                    <p class="currentBookingHeader" id="currentBookingHeader"><h1>Current Adventure Booking</h1></p>
+                    <fieldset id="fieldset-1">
+                        <p id="adventuresOutput"></p>
+                    </fieldset>
+                </p>
+                <p id="submit">
+                    <input type="button" value="Book Adventure" id="bookadventure" class="bookadventurebutton">
+                </p>
+                <!-- Pop Up message -->
+                <p id="popupcontainer">
+                    <section>
+                        <p id="popupdetails"></p>
+                    </section>
+                    <section>
+                        <p id="summary"></p>
+                    </section>
+                </p>
+            </p>
+        </form>
+    </fieldset>
+    <fieldset>
+        <!-- overrall booking -->
+        <section id="output-field-2">
+            <h1>Overall Booking</h1>
+
+            <fieldset id="fieldset-2" class="overallfieldset">
+                <p id="output-2"></p>
+            </fieldset>
+        </section>
+        <br>
+        <!-- add to favourite button -->
+        <p id="favourite" class="addtofavouritebutton">
+            <input type="submit" value="Add to favourite" id="favourite">
+        </p>
+        <!-- added to favourite pop up message -->
+        <section id="addedToFav">
+            <p id="fav_container"></p>
+        </section>
+        <!-- loyalty points button -->
+        <section id="loyalty" class="loyaltybutton">
+            <input type="submit" value="Loyalty Points" id="loyalty">
+        </section>
+        <!-- loyalty points pop up -->
+        <section id="loyaltypopupContainer">
+            <section>
+                <p id="loyaltyPointsDetails"></p>
+            </section>
+        </section>
+        </section>
+    </fieldset>
+    <script src="./Hotel_Booking.js"></script>
+    <br>
+    <!--Footer Section-->
+    <footer class="footer1">
+        <section> 
+            <a href="./Home.html"><img class="footer-logo" src="./Logo2.png" alt="Logo of the blog"></a> 
+        </section>
+        <section class="footer-contact-information">
+            <h5><u><i>Contact</i></u></h5>
+            <a href="mailto:cb012479@students.apiit.lk" class="footer-email">Email Address</a>
+            <p>Earl's Regency Hotel, Kundasale 20168</p>
+        </section>
+        <section class="footer-Quick-Links">
+            <h4><u><i>Quick Links</i></u></h4>
+            <ul>
+            <li><a class="nav-home" href="./Home.html">Home page</a></li>
+            <li><a class="nav-Hotel-Branch" href="./Hotel_Branches.html">Hotel Branches</a></li>
+            <li><a class="nav-Adventures" href="./Adventures.html">Adventures</a></li>
+            <li><a class="nav-Restaurant" href="./Restaurants.html">Restaurants</a></li>
+            <li><a class="nav-Hotel-Booking-and-adventure-booking" href="./Hotel_Booking_and_adventure_booking.html">Booking hotel and adventures</a></li>
+            </ul>
+        </section>
+        <section>
+            <p>
+            <!--Link to go to top-->
+            <a href="#intro" class="footer-go-to-top">Go to top</a> <br> <br>
+            <iframe class="footer-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.639597981034!2d80.66463487454376!3d7.281783973968545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae366c3a19400f9%3A0x3eb8b1d79173d61a!2sEarl&#39;s%20Regency%20Hotel!5e0!3m2!1sen!2slk!4v1694115552074!5m2!1sen!2slk" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </p>
+            <p>Earl's Regency © 2023 - All Rights Reserved</p>
+            <!--Image were taken from Pexels and Official Earl's Regency Website-->
+            <!--Content was taken and rephrased from https://www.aitkenspencehotels.com/earlsregency/-->
+        </section>
+    </footer>
+</body>
+</html>
